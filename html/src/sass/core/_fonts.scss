@@ -1,0 +1,49 @@
+/*======================================
+  Fonts
+======================================*/
+
+
+/*@font-face {
+  font-family: 'fonte name';
+  src: url('../fonts/fonte-name.eot');
+  src: url('../fonts/fonte-name.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/fonte-name.woff') format('woff'),
+       url('../fonts/fonte-name.ttf') format('truetype'),
+       url('../fonts/fonte-name.svg#fonte-name') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}*/
+
+@font-face {
+  font-family: 'Goldplay';
+  src: local('Goldplay Alt Medium'), local('Goldplay-Alt-Medium'), url('../fonts/GoldplayAlt-Medium.woff2') format('woff2'), url('../fonts/GoldplayAlt-Medium.woff') format('woff'), url('../fonts/GoldplayAlt-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Goldplay Bold';
+  src: local('Goldplay Alt Bold'), local('Goldplay-Alt-Bold'), url('../fonts/GoldplayAlt-Bold.woff2') format('woff2'), url('../fonts/GoldplayAlt-Bold.woff') format('woff'), url('../fonts/GoldplayAlt-Bold.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body {
+  font-family: $font-main;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-alt;
+  font-weight: normal;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}

@@ -1,0 +1,308 @@
+/*======================================
+  Main structure
+======================================*/
+
+body {
+  //background: url(../images/bg.jpg) top center no-repeat;
+  //overflow: hidden;
+  background-color: $color-black;
+}
+
+// header
+header {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 64px 0 0 0;
+  .grid {
+    @include columns( $quant: 185px auto 185px, $gutter: 10px, $align: center, $template: '');
+    .social-midias {
+      padding: 0 0 0 12px;
+      ul {
+        display: flex;
+        align-items: center;
+        li {
+          padding: 0 0 0 21px;
+          a {}
+        }
+      }
+    }
+    .logo {
+      text-align: center;
+      .icon {
+        width: 234px;
+        height: 50px;
+        fill: $color-white;
+      }
+      a {}
+    }
+    .reel {
+      text-align: right;
+      padding: 0 29px 0 0;
+      span {
+        font-size: 32px;
+        font-weight: 900;
+        color: $color-rose;
+      }
+    }
+  }
+}
+
+@include breakpoint2($min:sm, $max:lg) {
+  header {
+    padding: get-vw-lg(64px) 0 0 0;
+    .grid {
+      @include columns( $quant: get-vw-lg(185px) auto get-vw-lg(185px), $gutter: get-vw-lg(10px), $align: center, $template: '');
+      .social-midias {
+        padding: 0 0 0 get-vw-lg(12px);
+        ul {
+          li {
+            padding: 0 0 0 get-vw-lg(21px);
+            a {}
+          }
+        }
+      }
+      .logo {
+        .icon {
+          width: get-vw-lg(234px);
+          height: get-vw-lg(50px);
+        }
+        a {}
+      }
+      .reel {
+        padding: 0 get-vw-lg(29px) 0 0;
+        span {
+          font-size: get-vw-lg(32px);
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint2($min:xs, $max:sm) {
+  header {
+    padding: get-vw-sm(64px) 0 0 0;
+    .grid {
+      @include columns( $quant: 1fr, $gutter: get-vw-sm(10px), $align: center, $template: '');
+      .social-midias {
+        padding: 0 0 0 get-vw-sm(12px);
+        ul {
+          li {
+            padding: 0 0 0 get-vw-sm(21px);
+            a {}
+          }
+        }
+        display: none;
+      }
+      .logo {
+        .icon {
+          width: get-vw-sm(234px);
+          height: get-vw-sm(50px);
+        }
+        a {}
+      }
+      .reel {
+        padding: 0 get-vw-sm(29px) 0 0;
+        span {
+          font-size: get-vw-sm(32px);
+        }
+        display: none;
+      }
+    }
+  }
+}
+
+@include breakpoint2($min:'', $max:xs) {
+  header {
+    padding: get-vw-xs(64px) 0 0 0;
+    .grid {
+      @include columns( $quant: 1fr, $gutter: get-vw-xs(10px), $align: center, $template: '');
+      .social-midias {
+        padding: 0 0 0 get-vw-xs(12px);
+        ul {
+          li {
+            padding: 0 0 0 get-vw-xs(21px);
+            a {}
+          }
+        }
+        display: none;
+      }
+      .logo {
+        .icon {
+          width: get-vw-xs(234px);
+          height: get-vw-xs(50px);
+        }
+        a {}
+      }
+      .reel {
+        padding: 0 get-vw-xs(29px) 0 0;
+        span {
+          font-size: get-vw-xs(32px);
+        }
+        display: none;
+      }
+    }
+  }
+}
+
+// end header
+// main
+main {
+  /*width: 100%;
+  height: 100vh;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(50vh);
+  scroll-snap-type: y mandatory;
+  scroll-snap-align: start end;
+  &>section {
+    scroll-snap-align: start end;
+    //overflow: hidden;
+    display: flex;
+    align-items: center;
+  }*/
+}
+
+@include breakpoint2($min:sm, $max:lg) {}
+
+@include breakpoint2($min:xs, $max:sm) {}
+
+@include breakpoint2($min:'', $max:xs) {}
+
+// end main
+// footer
+footer {
+  .grid {
+    @include columns( $quant: 219px auto, $gutter: 0, $align: start, $template: '');
+    padding: 73px 0 38px 30px;
+    .logo {
+      .icon {
+        width: 219px;
+        height: 50px;
+        fill: $color-rose;
+      }
+    }
+    .social-midias {
+      display: flex;
+      justify-content: end;
+      ul {
+        display: flex;
+        align-items: center;
+        li {
+          padding: 0 29px 0 13px;
+          a {}
+          .fb {
+            width: 39px;
+          }
+          .ig {
+            width: 39px;
+          }
+          .yt {
+            width: 58px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint2($min:sm, $max:lg) {
+  footer {
+    .grid {
+      @include columns( $quant: get-vw-lg(219px) auto, $gutter: 0, $align: start, $template: '');
+      padding: get-vw-lg(73px) 0 get-vw-lg(38px) get-vw-lg(30px);
+      .logo {
+        .icon {
+          width: get-vw-lg(219px);
+          height: get-vw-lg(50px);
+        }
+      }
+      .social-midias {
+        ul {
+          li {
+            padding: 0 get-vw-lg(29px) 0 get-vw-lg(13px);
+            a {}
+            .fb {
+              width: get-vw-lg(39px);
+            }
+            .ig {
+              width: get-vw-lg(39px);
+            }
+            .yt {
+              width: get-vw-lg(58px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint2($min:xs, $max:sm) {
+  footer {
+    .grid {
+      @include columns( $quant: get-vw-sm(219px) auto, $gutter: 0, $align: start, $template: '');
+      padding: get-vw-sm(73px) 0 get-vw-sm(38px) get-vw-sm(30px);
+      .logo {
+        .icon {
+          width: get-vw-sm(219px);
+          height: get-vw-sm(50px);
+        }
+      }
+      .social-midias {
+        ul {
+          li {
+            padding: 0 get-vw-sm(29px) 0 get-vw-sm(13px);
+            a {}
+            .fb {
+              width: get-vw-sm(39px);
+            }
+            .ig {
+              width: get-vw-sm(39px);
+            }
+            .yt {
+              width: get-vw-sm(58px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint2($min:'', $max:xs) {
+  footer {
+    .grid {
+      @include columns( $quant: get-vw-xs(219px) auto, $gutter: 0, $align: start, $template: '');
+      padding: get-vw-xs(73px) 0 get-vw-xs(38px) get-vw-xs(30px);
+      .logo {
+        .icon {
+          width: get-vw-xs(219px);
+          height: get-vw-xs(50px);
+        }
+      }
+      .social-midias {
+        ul {
+          li {
+            padding: 0 get-vw-xs(13px) 0 get-vw-xs(13px);
+            a {}
+            .fb {
+              width: get-vw-xs(30px);
+            }
+            .ig {
+              width: get-vw-xs(30px);
+            }
+            .yt {
+              width: get-vw-xs(40px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// end footer
