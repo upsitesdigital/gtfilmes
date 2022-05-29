@@ -170,6 +170,31 @@
   }
 }
 
+.modal-video {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color-black, 0.5);
+  padding: 0 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .box {
+    width: 100%;
+    height: 0;
+    padding: 56.26% 0 0 0;
+    position: relative;
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
 
 /*======================================
   section-instagram
@@ -299,13 +324,23 @@
 ======================================*/
 
 .section-team {
-  background-color: #df23ec;
+  background-color: #c027e8;
   .grid {
     width: 100%;
     height: 100%;
     @include columns( $quant: 50.5% 49.5%, $gutter: 0, $align: center, $template: '');
     .text {
+      position: relative;
+      width: 100%;
+      height: 100%;
       h2 {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      /*h2 {
         padding: 0 0 0 223px;
         font-size: 225px;
         font-weight: 100;
@@ -329,13 +364,16 @@
             display: block;
           }
         }
-      }
+      }*/
       p {
-        padding: 0 30px 0 369px;
+        padding: 0 30px 0 0px;
         font-size: 26px;
-        margin: -34px 0 0 0;
+        margin: 0px 0 0 0;
         line-height: 120%;
         color: $color-white;
+        position: absolute;
+        bottom: 84px;
+        right: 172px;
       }
       .geetee-filmes {
         text-transform: uppercase;
@@ -442,7 +480,7 @@
     .grid {
       @include columns( $quant: 50.5% 49.5%, $gutter: 0, $align: center, $template: '');
       .text {
-        h2 {
+        /*h2 {
           padding: 0 0 0 get-vw-lg(223px);
           font-size: get-vw-lg(225px);
           span {
@@ -458,11 +496,12 @@
               margin-top: get-vw-lg(-43px);
             }
           }
-        }
+        }*/
         p {
-          padding: 0 get-vw-lg(30px) 0 get-vw-lg(369px);
+          padding: 0 get-vw-lg(30px) 0 0px;
           font-size: get-vw-lg(26px);
-          margin: get-vw-lg(-34px) 0 0 0;
+          bottom: get-vw-lg(84px);
+          right: get-vw-lg(172px);
         }
         .geetee-filmes {
           bottom: get-vw-lg(218px);

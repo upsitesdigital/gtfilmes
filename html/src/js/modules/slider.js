@@ -2,8 +2,24 @@
  * Slider
  */
 export default function() {
+  const resizeTextInsta = () => {
+      setTimeout(function() {
+        const $width = jQuery('.section-instagram .slick-center').width();
+        const $pos = jQuery('.section-instagram .slick-center').offset().left + jQuery('.section-instagram .slick-center').width();
+        const $target = jQuery('.section-instagram .block-text');
+        $target.css({ 'left': $pos, 'width': $width });
+        console.log('resizeTextInsta');
+      }, 100);
+      return false;
+    }
+    /* function resizeTextInsta() {
+      const $width = jQuery('.section-instagram .slick-center').width();
+      const $pos = jQuery('.section-instagram .slick-center').offset().left + jQuery('.section-instagram .slick-center').width();
+      const $target = jQuery('.section-instagram .block-text');
+      $target.css({ 'left': $pos, 'width': $width });
+      return false;
+    }*/
   if ($('#instabox').length != 0) {
-    console.log('oi');
     var token = 'IGQVJVbzM3VEdtVEh2T1J3M1VhWDVUeFN6T3VJOE1wQndsNEc5eG1ILVdDV0w5bzNDOUNvekEyVEpxYnJDcE56amxFUGZAuWldRQjlGOUdUWjNMTWpQMjd3QkhXbUNfd1pndGM1cTNPdWJBN0pOWFRrWgZDZD';
     var fields = 'id,media_type,media_url,permalink,caption';
     var limit = 10;
@@ -13,18 +29,17 @@ export default function() {
       type: 'GET',
       success: function(response) {
         $.each(response.data, function(index, value) {
-          if (value.media_type === "IMAGE") {
+          if (value.media_type === 'IMAGE') {
             html = '<div class="item"><img src="' + value.media_url + '" alt="' + value.caption + '"></div>';
             $('#instabox').append(html);
-            console.log(html);
           }
         });
       },
-      error: function(data) {
+      error: function() {
         var html = '<div class="class-no-data">No Images Found</div>';
         $('#instabox').append(html);
       },
-      complete: function(data) {
+      complete: function() {
         setTimeout(function() {
           const $instaslider = $('#instabox');
           $instaslider.slick({
@@ -45,6 +60,11 @@ export default function() {
                 centerPadding: '20vw',
               }
             }]
+          });
+          resizeTextInsta();
+          $(window).on('resize', function() {
+            console.log('oi');
+            resizeTextInsta();
           });
         }, 200);
       }
