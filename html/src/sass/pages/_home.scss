@@ -31,7 +31,33 @@
   background: url(../img/bg-video.jpg) center center no-repeat;
   background-size: cover;
   height: 100vh;
+  .video-bg {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    .video-background {
+      background: #000;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+    }
+    .video-foreground,
+    .video-background iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+  }
   a {
+    position: relative;
+    z-index: 10;
     width: 100%;
     height: 100%;
     display: flex;
@@ -87,6 +113,28 @@
   }
 }
 
+@media (min-aspect-ratio: 16/9) {
+  .section-video {
+    .video-bg {
+      .video-foreground {
+        height: 300%;
+        top: -100%;
+      }
+    }
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .section-video {
+    .video-bg {
+      .video-foreground {
+        width: 300%;
+        left: -100%;
+      }
+    }
+  }
+}
+
 @include breakpoint2($min:sm, $max:lg) {
   .section-video {
     a {
@@ -112,6 +160,9 @@
 
 @include breakpoint2($min:xs, $max:sm) {
   .section-video {
+    .video-bg {
+      display: none;
+    }
     a {
       padding: get-vw-sm(32px) 0 0 get-vw-sm(12px);
       .icon {
@@ -142,6 +193,9 @@
 
 @include breakpoint2($min:'', $max:xs) {
   .section-video {
+    .video-bg {
+      display: none;
+    }
     a {
       padding: get-vw-xs(32px) 0 0 get-vw-xs(12px);
       .icon {
@@ -776,7 +830,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: get-vw-sm(38px) 0 0 0;
+        padding: get-vw-sm(38px) 0 get-vw-sm(48px) 0;
         p {
           width: 100%;
           max-width: get-vw-sm(412px);
@@ -835,7 +889,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: get-vw-xs(38px) 0 0 0;
+        padding: get-vw-xs(38px) 0 get-vw-sm(68px) 0;
         p {
           width: 100%;
           max-width: get-vw-xs(412px);

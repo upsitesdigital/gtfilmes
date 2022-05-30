@@ -3,22 +3,16 @@
  */
 export default function() {
   const resizeTextInsta = () => {
-      setTimeout(function() {
-        const $width = jQuery('.section-instagram .slick-center').width();
-        const $pos = jQuery('.section-instagram .slick-center').offset().left + jQuery('.section-instagram .slick-center').width();
-        const $target = jQuery('.section-instagram .block-text');
-        $target.css({ 'left': $pos, 'width': $width });
-        console.log('resizeTextInsta');
-      }, 100);
-      return false;
-    }
-    /* function resizeTextInsta() {
+    setTimeout(function() {
       const $width = jQuery('.section-instagram .slick-center').width();
       const $pos = jQuery('.section-instagram .slick-center').offset().left + jQuery('.section-instagram .slick-center').width();
       const $target = jQuery('.section-instagram .block-text');
       $target.css({ 'left': $pos, 'width': $width });
-      return false;
-    }*/
+      // console.log('resizeTextInsta');
+    }, 100);
+    // return false;
+  }
+
   if ($('#instabox').length != 0) {
     var token = 'IGQVJVbzM3VEdtVEh2T1J3M1VhWDVUeFN6T3VJOE1wQndsNEc5eG1ILVdDV0w5bzNDOUNvekEyVEpxYnJDcE56amxFUGZAuWldRQjlGOUdUWjNMTWpQMjd3QkhXbUNfd1pndGM1cTNPdWJBN0pOWFRrWgZDZD';
     var fields = 'id,media_type,media_url,permalink,caption';
@@ -63,7 +57,7 @@ export default function() {
           });
           resizeTextInsta();
           $(window).on('resize', function() {
-            console.log('oi');
+            // console.log('oi');
             resizeTextInsta();
           });
         }, 200);
