@@ -47,6 +47,7 @@ export default function() {
             focusOnSelect: true,
             adaptiveHeight: true,
             centerPadding: '170px',
+            autoplay: true,
             responsive: [{
               breakpoint: 768,
               settings: {
